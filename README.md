@@ -7,7 +7,7 @@ Since this is a template, it might not suit your production needs. You will cert
 ### Quickstart
 
 * Clone the project.
-* Run `kubectl apply -f ./monolith-gitlab-k8s/`
+* Run `kubectl apply -f ./monolith-gitlab-k8s/k8s`
 
 ### Gotchas
 
@@ -15,4 +15,4 @@ Since this is a template, it might not suit your production needs. You will cert
 * The PVCs will use the default storage class, you need to have a proper one set.
 * The service will expose 80(HTTP), 443(HTTPS) and 22 (SSH) ports, maybe you won't need them all, don't hesitate to edit it.
 * The Gitlab image tag is set to `latest`, this is not recommended in production. Replace it with the explicit version from https://hub.docker.com/r/gitlab/gitlab-ce/tags.
-
+* This deployment doesn't have container resource limits. It could starve other processes on your nodes.
